@@ -1,29 +1,14 @@
-// const flatten = function(input) {
-//   const stack = [...input];
-//   const res = [];
-//   while (stack.length){
-// const next = stack.pop()
-// if(Array.isArray(next)){
-//   stack.push(...next);
-// } else{
-//   res.push(next);
-// }
-//   }
-//   return res.reverse();
-// }
-
-
-let arr = [0, 1, 2, [[[3, 4]]]];
-
-const flatten = function(arr){
-  console.log(arr);
-  if(Array.isArray(arr)){
-
-    // Infinity
-// let flatArr = arr.flat();
-// console.log("flatArr", flatArr);
+const flatten = function (input) {
+  let results = [];
+  for (let i = 0; i < input.length; i++) {
+   if(Array.isArray(input[i]) === true) {
+     for (let j = 0; j < input[i].length; j++) {
+       results.push(input[i][j])
+     }
+   } else {
+     results.push(input[i])
+   }
   }
+  return results
 };
-
-flatten(arr);
-console.log(flatten(arr));
+console.log(flatten([1, 2, [3, 4], 5, [6]])) // => [1, 2, 3, 4, 5, 6]

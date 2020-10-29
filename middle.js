@@ -1,41 +1,23 @@
-
-// const eqArrays = function(arr1, arr2) {
-//   let counter = 0;
-//   if (arr1.length === arr2.length) {
-//     for (let i = 0; i < arr1.length; i++) {
-//       if (arr1[i] === arr2[i]) {
-//         counter++;
-//       }
-//     }
-//     console.log(arr1.length);
-//     if (counter === arr1.length) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   } else {
-//     return false;
-//   }
-// };
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual,expected)) {
+    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
 
 
-// const assertArraysEqual = function(arr1, arr2) {
-//   let counter = 0;
-//   if (arr1.length === arr2.length) {
-//     for (let i = 0; i < arr1.length; i++) {
-//       if (arr1[i] === arr2[i]) {
-//         counter++;
-//       }
-//     }
-//     console.log("arr1", arr1);
-//     console.log("arr2", arr2);
-//     if (counter === arr1.length) {
-//       return ("✅✅✅Assertion Passed: " + arr1 + " ===" + arr2);
-//     } else {
-//       return ("🔴🔴🔴Assertion Failed: " + arr1 + " !== " + arr2);
-//     }
-//   }
-// };
+const eqArrays = function(arr1, arr2){
+  if (arr1.length !== arr2.length){
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++){
+    if (arr1[i] !== arr2[i]){
+      return false;
+    }
+  }
+  return true;
+}
 
 // ACTUAL FUNCTION
 const middle = function(array) {
@@ -49,7 +31,7 @@ const middle = function(array) {
   newArray.push(array[middleNum1], array[middleNum2]);
 
 } else {
-  newArray =array[Math.floor((array.length - 1) / 2)]
+  newArray.push(array[Math.floor((array.length - 1) / 2)]);
 }
 return newArray;
   //...
@@ -70,3 +52,10 @@ console.log(middle([1, 2, 3, 4, 5, 6]))
 
 
 // 20min
+
+assertArraysEqual(middle([1]),[]);
+// assertArraysEqual(middle([1,2]),[1,2]);
+assertArraysEqual(middle([1,2,3]),[2]);
+// assertArraysEqual(middle([1,2,3]),[1,2,3,4]);
+assertArraysEqual(middle([1,2,3,4]),[2,3]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]),[3,4]);

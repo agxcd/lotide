@@ -1,29 +1,23 @@
-const eqArrays = function(actual, expected) {
-  let counter = 0;
-  if (actual.length === expected.length) {
-    for (let i = 0; i < actual.length; i++) {
-      if (actual[i] === expected[i]) {
-        counter++;
-      }
-    }
-    if (counter === actual.length) {
-      return true;
-    } else {
-      return false;
-    }
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual,expected)) {
+    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
   } else {
+    console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+
+
+const eqArrays = function(arr1, arr2){
+  if (arr1.length !== arr2.length){
     return false;
   }
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} != ${expected}`);
+  for (let i = 0; i < arr1.length; i++){
+    if (arr1[i] !== arr2[i]){
+      return false;
+    }
   }
-};
-
+  return true;
+}
 
 
 const without = function(baseArr, itemsToRemove) {
