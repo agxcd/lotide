@@ -1,19 +1,11 @@
-const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama: "The Wire"
-};
+// const bestTVShowsByGenre = {
+//   sci_fi: "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama: "The Wire"
+// };
 
 // console.log(letterPositions("Hello"));
 // console.log(letterPositions("hello").e);
-
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ ✅ ✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🔴 🔴 🔴 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
 
 const findKeyByValue = function(object, value) {
   for (let key in object) {
@@ -22,8 +14,8 @@ const findKeyByValue = function(object, value) {
       return key;
     }
   }
-}
+};
 
-
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+module.exports = findKeyByValue;
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);

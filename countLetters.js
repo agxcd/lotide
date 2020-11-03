@@ -1,44 +1,13 @@
-// // FUNCTION IMPLEMENTATION
-// const assertEqual = function(actual, expected) {
-//   // console.assert(actual === expected);
-//   if (actual === expected) {
-//     console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-//     // console.log("🔴🔴🔴Assertion Passed: " + actual + " === " + expected);
-//   } else {
-//     console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
-//     // console.log("✅✅✅Assertion Failed: " + '"' + actual + '"' + " !== " + '"' + expected + '"');
-//   }
-// };
-
-
-// const countLetters = function(allItems, itemsToCount) {
-//   let filteredObj = {};
-//   for (let item of allItems) {
-
-//     if (itemsToCount[item]) {
-//       if (filteredObj[item]) {
-//         filteredObj[item] += 1;
-//         // console.log("filteredObj",filteredObj);
-
-//       } else {
-//         filteredObj[item] = 1;
-//         // console.log("filteredObj",filteredObj);
-//       }
-
-//     }
-//   }
-//   // console.log("filteredObj",filteredObj);
-//   return filteredObj;
-
-// }
-
 const countLetters = function(sentence) {
   const results = {};
   for (const letter of sentence) {
     console.log(letter);
   }
   return results;
-}
+};
+
+module.exports = countLetters;
+
 
 // console.log("filteredObj",filteredObj);
 

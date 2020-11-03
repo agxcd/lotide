@@ -1,16 +1,4 @@
 // FUNCTION IMPLEMENTATION
-const eqArrays = function(arr1, arr2){
-  if (arr1.length !== arr2.length){
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++){
-    if (arr1[i] !== arr2[i]){
-      return false;
-    }
-  }
-  return true;
-}
-
 
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
@@ -37,17 +25,29 @@ const eqObjects = function(object1, object2) {
 
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect; // <= add this line
- if (eqObjects(actual, expected)){
-  console.log(`✅ ✅ ✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
- } else{
-  console.log(`🔴 🔴 🔴 Assertion Failed:: ${inspect(actual)} !== ${inspect(expected)}`);
- }
+  if (eqObjects(actual, expected)) {
+    console.log(`✅ ✅ ✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`🔴 🔴 🔴 Assertion Failed:: ${inspect(actual)} !== ${inspect(expected)}`);
+  }
 };
 
-let A = { a: '1', b: 2 } 
-let B = { b: 2, a: '1' }
-assertObjectsEqual(A, B);
-// console.log(assertObjectsEqual(A, B));
-let C = { a: '1', b: 2 } 
-let D = { b: "2", a: '1' }
-assertObjectsEqual(C, D);
+// let A = {
+//   a: '1',
+//   b: 2
+// }
+// let B = {
+//   b: 2,
+//   a: '1'
+// }
+// assertObjectsEqual(A, B);
+// // console.log(assertObjectsEqual(A, B));
+// let C = {
+//   a: '1',
+//   b: 2
+// }
+// let D = {
+//   b: "2",
+//   a: '1'
+// }
+// assertObjectsEqual(C, D);
