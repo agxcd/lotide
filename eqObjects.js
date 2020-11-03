@@ -21,7 +21,7 @@ const eqObjects = function(object1, object2) {
         // console.log("key", key)
         // console.log("object1[key]", object1[key])
         // console.log("object2[key]", object2[key])
-        return false;
+        return false
       }
     }
   }
@@ -29,7 +29,6 @@ const eqObjects = function(object1, object2) {
 };
 
 module.exports = eqObjects;
-
 
 // const ab = {
 //   a: "1",

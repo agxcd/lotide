@@ -17,7 +17,7 @@ const countOnly = function(allItems, itemsToCount) {
 
 }
 
-module.exports = assertObjectsEqual;
+module.exports = countOnly;
 
 // console.log("filteredObj",filteredObj);
 
